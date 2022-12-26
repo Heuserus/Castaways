@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     // The time at which the bullet was created
     private float creationTime;
 
+    public float damage;
+
     // Start is called before the first frame update
     void Start()
     {
