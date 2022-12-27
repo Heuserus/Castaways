@@ -60,6 +60,8 @@
     <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\Movement.cs" />
     <Compile Include="Assets\Cannon.cs" />
+    <Compile Include="Assets\CannonItem.cs" />
+    <Compile Include="Assets\Ship.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NewSurfaceShader.shader" />

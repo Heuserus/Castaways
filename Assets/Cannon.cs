@@ -22,42 +22,16 @@ public class Cannon : MonoBehaviour
     void Update()
     {
         // Check if the left mouse button is clicked
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Create a ray from the mouse position
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            // Create a plane at the position of the cannon and with a normal facing up (in the positive Y direction)
-            Plane groundPlane = new Plane(Vector3.up, transform.position);
-
-            // Declare a variable to store the distance from the ray to the ground plane
-            float distance;
-
-            // Check if the ray intersects with the ground plane
-            if (groundPlane.Raycast(ray, out distance))
-            {
+        
                 
-                // Calculate the point of intersection
-                Vector3 target = ray.GetPoint(distance);
-               
-
-                
-
-                //calculate Angle bet
-                angle = AngleBetween(AngleToVector(player.transform.eulerAngles.y).normalized,(target - player.transform.position).normalized);
-                if(angle < 150 && angle > 30){
-                    // Instantiate the bullet at the position of the cannon
-                GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        
+        
+    }
+    public void shoot(Vector3 target){
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 
                 // Add force to the bullet in the direction of the target
-                bullet.GetComponent<Rigidbody>().AddForce(((target - player.transform.position).normalized + new Vector3 (0f, upForce, 0f)) * firingForce);
-
-                }
-
-                
-                
-            }
-        }
+        bullet.GetComponent<Rigidbody>().AddForce(((target - player.transform.position).normalized + new Vector3 (0f, upForce, 0f)) * firingForce);
     }
 
     public static Vector3 AngleToVector(float angle)

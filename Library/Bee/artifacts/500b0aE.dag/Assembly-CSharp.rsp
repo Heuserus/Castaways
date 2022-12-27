@@ -334,8 +334,10 @@
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Bullet.cs"
 "Assets/Cannon.cs"
+"Assets/CannonItem.cs"
 "Assets/FollowCamera.cs"
 "Assets/Movement.cs"
+"Assets/Ship.cs"
 -langversion:9.0
 
 /deterministic
